@@ -15,3 +15,4 @@ for vm in $vms; do
   azure network nic create -n "$vm-nic" -l eastus -o "swarm-nsg" -g "docker-swarm" --subnet-name "default"
   azure vm create docker-swarm $vm eastus --nic-name "$vm-nic" -y "Linux" -Q "UbuntuLTS" -u "nandotorres" --ssh-publickey-file ~/.ssh/id_rsa.pub -z "Basic_A1" --vnet-name "swarm-vnet" --vnet-subnet-name "default" --public-ip-name "$vm-IP" --custom-data "./provision.sh"
 done
+
