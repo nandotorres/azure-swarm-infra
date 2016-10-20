@@ -5,8 +5,8 @@ azure group create docker-swarm eastus
 azure network vnet create docker-swarm swarm-vnet eastus -a "10.0.0.0/24"
 azure network vnet subnet create docker-swarm swarm-vnet default -a "10.0.0.0/24"
 azure network nsg create docker-swarm swarm-nsg eastus
-azure network nsg rule create -g "docker-swarm" -a "swarm-nsg" -n "HTTP" -d "Allow HTTP" -p "TCP" -f "0.0.0.0/24" -o "80" -e "0.0.0.0/24" -c "Allow" -r "Inbound" -y "100"
-azure network nsg rule create -g "docker-swarm" -a "swarm-nsg" -n "8080" -d "Allow HTTP Variation" -p "TCP" -f "0.0.0.0/24" -o "8080" -e "0.0.0.0/24" -c "Allow" -r "Inbound" -y "110"
+azure network nsg rule create -g "docker-swarm" -a "swarm-nsg" -n "HTTP" -d "Allow HTTP" -p "TCP" -f "0.0.0.0/24" -u "80" -e "0.0.0.0/24" -c "Allow" -r "Inbound" -y "100"
+azure network nsg rule create -g "docker-swarm" -a "swarm-nsg" -n "8080" -d "Custom" -p "TCP" -f "0.0.0.0/24" -u "8080" -e "0.0.0.0/24" -c "Allow" -r "Inbound" -y "110"
 
 vms="manager1 manager2 manager3 worker1 worker2 worker3"
 
