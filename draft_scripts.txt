@@ -1,6 +1,7 @@
 Manager1 (10.0.0.4):
 sudo docker swarm init --advertise-addr 10.0.0.4:2377 --listen-addr 10.0.0.4:2377
 
+
 sudo docker swarm join-token worker
 
 docker swarm join \
